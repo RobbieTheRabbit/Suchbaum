@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="740.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+   <children>
+      <MenuBar layoutY="1.0" prefHeight="6.0" prefWidth="1200.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Datei">
+            <items>
+                  <MenuItem mnemonicParsing="false" text="Baum speichern" />
+              <MenuItem mnemonicParsing="false" text="Als Bild speichern ..." />
+                  <MenuItem mnemonicParsing="false" onAction="#closeOnAction" text="Beenden" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Bearbeiten">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Hilfe">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TextArea fx:id="taHistory" editable="false" layoutX="14.0" layoutY="47.0" prefHeight="105.0" prefWidth="227.0" />
+      <AnchorPane layoutX="14.0" layoutY="159.0" prefHeight="165.0" prefWidth="227.0">
+         <children>
+            <Button id="bSuchen" fx:id="bSearch" layoutX="18.0" layoutY="29.0" mnemonicParsing="false" onAction="#searchNote" prefHeight="34.0" prefWidth="116.0" text="Suchen" textAlignment="JUSTIFY">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button id="bEinfuegen" fx:id="bInsert" layoutX="17.0" layoutY="77.0" mnemonicParsing="false" onAction="#insertNote" prefHeight="34.0" prefWidth="116.0" text="Einfügen">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button id="bEntfernen" fx:id="bDelete" layoutX="17.0" layoutY="124.0" mnemonicParsing="false" onAction="#deleteNote" prefHeight="34.0" prefWidth="116.0" text="Entfernen">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <TextField fx:id="tfSearch" layoutX="144.0" layoutY="29.0" prefHeight="34.0" prefWidth="67.0" promptText="z.B. 23" />
+            <TextField fx:id="tfInsert" layoutX="144.0" layoutY="80.0" prefHeight="34.0" prefWidth="67.0" promptText="z.B. 23" />
+            <TextField fx:id="tfDelete" layoutX="144.0" layoutY="124.0" prefHeight="34.0" prefWidth="67.0" promptText="z.B. 23" />
+            <Text layoutX="76.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Operatioen">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="apDraw" layoutX="250.0" layoutY="50.0" prefHeight="640.0" prefWidth="940.0" />
+      <AnchorPane layoutX="14.0" layoutY="344.0" prefHeight="187.0" prefWidth="227.0">
+         <children>
+            <Button id="bSuchen" fx:id="bPreorder" layoutX="17.0" layoutY="29.0" mnemonicParsing="false" onAction="#preorder" prefHeight="34.0" prefWidth="193.0" text="Preorder" textAlignment="JUSTIFY">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Text layoutX="68.0" layoutY="19.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Traversierung">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+            <Button id="bSuchen" fx:id="bInorder" layoutX="17.0" layoutY="68.0" mnemonicParsing="false" onAction="#inorder" prefHeight="34.0" prefWidth="193.0" text="Inorder" textAlignment="JUSTIFY">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button id="bSuchen" fx:id="bPostorder" layoutX="17.0" layoutY="106.0" mnemonicParsing="false" onAction="#postorder" prefHeight="34.0" prefWidth="193.0" text="Postorder" textAlignment="JUSTIFY">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button id="bSuchen" fx:id="bLevelorder" layoutX="17.0" layoutY="145.0" mnemonicParsing="false" onAction="#levelorder" prefHeight="34.0" prefWidth="193.0" text="Levelorder" textAlignment="JUSTIFY">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Button id="bSuchen" fx:id="bTreeHigh" layoutX="31.0" layoutY="570.0" mnemonicParsing="false" onAction="#highTree" prefHeight="34.0" prefWidth="193.0" text="Höhe des Baumes" textAlignment="JUSTIFY">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button id="bSuchen" fx:id="bClearTree" layoutX="31.0" layoutY="656.0" mnemonicParsing="false" onAction="#clearTree" prefHeight="34.0" prefWidth="193.0" text="Baum leeren!" textAlignment="JUSTIFY" textFill="RED">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Text fx:id="tOutput" layoutX="317.0" layoutY="716.0" strokeType="OUTSIDE" strokeWidth="0.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+   </children>
+</Pane>

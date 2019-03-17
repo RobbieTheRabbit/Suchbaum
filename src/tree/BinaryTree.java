@@ -9,10 +9,9 @@ package tree;
  * 
  * @author Sven Böhrnsen
  *********************************************************************/
-public class BinaryTree extends Traverse {
+public class BinaryTree {
 
 	Node root;
-	
 
 	/**
 	 * getter Methode für den Aufruf der Wurzel
@@ -169,8 +168,8 @@ public class BinaryTree extends Traverse {
 	}
 
 	/*********************************************************************
-	 * Diese Funktion behandelt den Fall, wenn zwei Kindsknoten vorhanden sind
-	 * es sucht in den Teilbäumen den Ersatz für den zu entfernenden Knoten
+	 * Diese Funktion behandelt den Fall, wenn zwei Kindsknoten vorhanden sind es
+	 * sucht in den Teilbäumen den Ersatz für den zu entfernenden Knoten
 	 * 
 	 * @param replacedNode
 	 * @return
@@ -213,7 +212,7 @@ public class BinaryTree extends Traverse {
 		}
 
 	}
-	
+
 	/**
 	 * Methode um den kleinsten Knoten in einem Baum zu bekommen
 	 * 
@@ -269,6 +268,6 @@ public class BinaryTree extends Traverse {
 	 * @return
 	 */
 	public Object setRoot() {
-		return null;
+		return root = null;
 	}
 }
